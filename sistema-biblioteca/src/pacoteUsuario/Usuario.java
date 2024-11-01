@@ -1,13 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pacoteUsuario;
 
-/**
- *
- * @author aluno
- */
+import java.util.ArrayList;
+
 public class Usuario {
+    protected static ArrayList<Usuario> lista_usuarios = new ArrayList();
+    protected static int GERADOR_ID = 1;
     
+    protected String nome, senha;
+    protected int id;
+    
+    public Usuario(){
+        this.nome = null;
+        this.senha = null;
+        
+        // A terminar
+                
+    }
 }
