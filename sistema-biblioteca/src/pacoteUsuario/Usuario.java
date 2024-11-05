@@ -8,9 +8,12 @@ public class Usuario {
     protected int id;
     
     public Usuario(String tipo_acesso){
+        this.id = GERADOR_ID;
         this.nome = null;
         this.senha = null;
         this.tipo_acesso = tipo_acesso;
+        
+        GERADOR_ID++;
                 
     }
     

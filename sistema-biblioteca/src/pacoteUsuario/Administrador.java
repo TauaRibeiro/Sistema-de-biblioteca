@@ -4,20 +4,21 @@ import java.util.ArrayList;
 
 public class Administrador extends Usuario{
     protected static ArrayList<Usuario> lista_usuarios = new ArrayList();
+    
     public Administrador(){
         super("adm");
     }
     
     @Override
     public String toString(){
-        return "ID: "+ this.id + "\nNOME" + this.nome + "\nTipo de acesso: " + this.tipo_acesso + "\nSenha: " + this.senha + "\n";
+        return "ID: "+ this.id + "\nNOME: " + this.nome + "\nTipo de acesso: " + this.tipo_acesso + "\nSenha: " + this.senha + "\n";
     }
     
-     public static void cadastrarUsuario(Usuario u){
+    public void cadastrarUsuario(Usuario u){
         lista_usuarios.add(u);
     }
     
-    public static String mostrarUsuarios(){
+    public String mostrarUsuarios(){
         if(lista_usuarios.isEmpty()){
             return "Não usuários cadastrados...";
         }
@@ -31,7 +32,7 @@ public class Administrador extends Usuario{
         return resultado.toString();
     }
     
-    public static String editarUsuario(int id_usuario, Usuario usuario_editado){
+    public String editarUsuario(int id_usuario, Usuario usuario_editado){
         if(lista_usuarios.isEmpty()){
             return "Não há usuários cadastrados...";
         }
@@ -56,7 +57,7 @@ public class Administrador extends Usuario{
         return "Usuário não encontrado";
     }
     
-    public static String excluirUsuario(int id_usuario){
+    public String excluirUsuario(int id_usuario){
         if(lista_usuarios.isEmpty()){
             return "Não há usuário cadastrados...";
         }
