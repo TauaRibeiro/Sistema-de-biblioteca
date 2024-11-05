@@ -1,26 +1,18 @@
 package pacoteUsuario;
 
-import java.util.ArrayList;
 
 public class Usuario {
-    protected static ArrayList<Usuario> lista_usuarios = new ArrayList();
     protected static int GERADOR_ID = 1;
     
-    protected String nome, senha;
+    protected String nome, senha, tipo_acesso;
     protected int id;
     
-    public Usuario(){
+    public Usuario(String tipo_acesso){
         this.nome = null;
         this.senha = null;
+        this.tipo_acesso = tipo_acesso;
                 
     }
-
-    @Override
-    public String toString() {
-        return "ID: " + id +"\nNOME: " + nome+ "\n";
-    }
-    
-    
     
     public String getNome() {
         return nome;
@@ -52,61 +44,13 @@ public class Usuario {
     public int getId() {
         return id;
     }
-    
-    
-    public static void cadastrarUsuario(Usuario u){
-        lista_usuarios.add(u);
+
+    public String getTipo_acesso() {
+        return tipo_acesso;
+    }
+
+    public void setTipo_acesso(String tipo_acesso) throws IllegalArgumentException{
+        this.tipo_acesso = tipo_acesso;
     }
     
-    public static String mostrarUsuarios(){
-        if(lista_usuarios.isEmpty()){
-            return "Não usuários cadastrados...";
-        }
-        
-        StringBuilder resultado = new StringBuilder();
-        
-        for(Usuario u:lista_usuarios){
-            resultado.append(u.toString()).append('\n');
-        }
-        
-        return resultado.toString();
-    }
-    
-    public static String editarUsuario(int id_usuario, Usuario usuario_editado){
-        if(lista_usuarios.isEmpty()){
-            return "Não há usuários cadastrados...";
-        }
-        
-        for(Usuario u:lista_usuarios){
-            if(u.id == id_usuario){
-                if(usuario_editado.nome != null){
-                    u.nome = usuario_editado.nome;
-                }
-                
-                if(usuario_editado.senha != null){
-                    u.senha = usuario_editado.senha;
-                }
-                
-                return "Usuário editado com sucesso!!";
-            }
-        }
-        
-        return "Usuário não encontrado";
-    }
-    
-    public static String excluirUsuario(int id_usuario){
-        if(lista_usuarios.isEmpty()){
-            return "Não há usuário cadastrados...";
-        }
-        
-        for(Usuario u:lista_usuarios){
-            if(u.id == id_usuario){
-                lista_usuarios.remove(u);
-                
-                return "Usuário removido com sucesso!!";
-            }
-        }
-        
-        return "Usuário não encontrado...";
-    }
 }
