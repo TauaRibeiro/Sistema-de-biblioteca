@@ -55,5 +55,4 @@ public class Usuario {
     public void setTipo_acesso(String tipo_acesso) throws IllegalArgumentException{
         this.tipo_acesso = tipo_acesso;
     }
-    
-}
+}  

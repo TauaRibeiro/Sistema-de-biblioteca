@@ -1,12 +1,16 @@
 
 package pacoteLivro;
 
+import java.util.ArrayList;
+
 public class Livro {
     // Declaração de variáveis de instância privadas
-    private String titulo;
-    private String autor;
-    private int ano;
-    private String genero;
+    protected String titulo;
+    protected String autor;
+    protected int ano;
+    protected String genero;
+    protected static ArrayList<Livro> Listalivro = new ArrayList();
+
 
     // Construtor da classe que inicializa as variáveis de instância
     public Livro(String titulo, String autor, int ano, String genero) {
@@ -49,9 +53,13 @@ public class Livro {
     public void setGenero(String genero) {
         this.genero = genero; // Define um novo valor para o gênero
     }
-}
-
     
-
-
+    public void exibirInfo(){
+        System.out.println("Titulo: "+titulo);
+            System.out.println("Autor: "+autor);
+            System.out.println("Genero: "+genero);
+            System.out.println("Ano de publicação: : "+ano);
+    }
+}
+    
 
