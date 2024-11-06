@@ -3,7 +3,7 @@ package pacoteUsuario;
 import java.util.ArrayList;
 
 public class Administrador extends Usuario{
-    protected static ArrayList<Usuario> lista_usuarios = new ArrayList();
+    private static ArrayList<Usuario> lista_usuarios = new ArrayList();
     
     public Administrador(){
         super("adm");
@@ -13,6 +13,11 @@ public class Administrador extends Usuario{
     public String toString(){
         return "ID: "+ this.id + "\nNOME: " + this.nome + "\nTipo de acesso: " + this.tipo_acesso + "\nSenha: " + this.senha + "\n";
     }
+
+    public static ArrayList<Usuario> getLista_usuarios() {
+        return lista_usuarios;
+    }
+    
     
     public void cadastrarUsuario(Usuario u){
         lista_usuarios.add(u);
