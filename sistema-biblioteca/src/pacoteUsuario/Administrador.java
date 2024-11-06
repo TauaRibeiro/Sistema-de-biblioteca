@@ -32,31 +32,6 @@ public class Administrador extends Usuario{
         return resultado.toString();
     }
     
-    public String editarUsuario(int id_usuario, Usuario usuario_editado){
-        if(lista_usuarios.isEmpty()){
-            return "Não há usuários cadastrados...";
-        }
-        
-        for(Usuario u:lista_usuarios){
-            if(u.id == id_usuario){
-                if(usuario_editado.nome != null){
-                    u.nome = usuario_editado.nome;
-                }
-                
-                if(usuario_editado.senha != null){
-                    u.senha = usuario_editado.senha;
-                }
-                
-                if(!usuario_editado.tipo_acesso.equalsIgnoreCase(u.tipo_acesso)){
-                    u.tipo_acesso = usuario_editado.tipo_acesso;
-                }
-                return "Usuário editado com sucesso!!";
-            }
-        }
-        
-        return "Usuário não encontrado";
-    }
-    
     public String excluirUsuario(int id_usuario){
         if(lista_usuarios.isEmpty()){
             return "Não há usuário cadastrados...";
