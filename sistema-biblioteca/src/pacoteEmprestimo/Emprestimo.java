@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import pacoteLivro.Livro;
 import pacoteUsuario.Usuario;
 import java.time.LocalDate;
-import pacoteUsuario.Administrador;
+import pacoteUsuario.Funcionario;
 
 public class Emprestimo {
     private int GERADOR_ID = 1;
@@ -47,8 +47,8 @@ public class Emprestimo {
     }
     
     
-    public static String realizarEmprestimo(Emprestimo e, Administrador adm){
-        for(Usuario u: Administrador.getLista_usuarios()){
+    public static String realizarEmprestimo(Emprestimo e, Funcionario adm){
+        for(Usuario u: Funcionario.getLista_usuarios()){
             if(adm == u){
                 lista_emprestimos.add(e);
                 

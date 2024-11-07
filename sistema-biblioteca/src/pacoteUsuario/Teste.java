@@ -2,7 +2,7 @@ package pacoteUsuario;
 
 public class Teste {
     public static void main(String[] args) {
-        Administrador adm = new Administrador();
+        Funcionario adm = new Funcionario();
         Cliente estudante = new Cliente();
         Funcionario professor = new Funcionario();
         

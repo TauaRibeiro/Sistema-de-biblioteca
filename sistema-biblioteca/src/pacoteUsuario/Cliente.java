@@ -9,13 +9,38 @@ package pacoteUsuario;
  * @author Tauã- one nation
  */
 public class Cliente extends Usuario{
+    private String cpf, endereco;
+    
     public Cliente(){
-        super("estudante");
+        super();
+        this.cpf = null;
+        this.endereco = null;
     }
     
-    @Override
-    public String toString(){
-        return "ID: "+ this.id + "\nNOME: " + this.nome + "\nTipo de acesso: " + this.tipo_acesso + "\nSenha: " + this.senha + "\n";
+    public String getCpf() {
+        return cpf;
     }
+
+    public void setCpf(String cpf) throws IllegalArgumentException{
+        if(cpf.length() != 11){
+            throw new IllegalArgumentException("CPF inválido!! O cpf deve conter apenas os 11 dígitos numéricos...");
+        }else{
+            this.cpf = cpf;
+        }
+    }
+    
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) throws IllegalArgumentException{
+        if(endereco.length() < 5){
+            throw new IllegalArgumentException("endereço inválido!! O endereço deve ter mais de 5 caracteres...");
+        }
+        this.endereco = endereco;
+    }
+    
+    
+    
     
 }

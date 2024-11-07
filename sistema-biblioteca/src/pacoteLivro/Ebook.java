@@ -7,11 +7,8 @@ public class Ebook extends Livro {
         super(titulo, autor, ano, genero);
     }
     
-     @Override
-     public void exibirInfo(){
-       super.exibirInfo();
-       System.out.println("Tipo: Ebook");
-       System.out.println("Tipo de Arquivo:"+TipoArquivo);
-     }
-    
+    @Override
+    public String toString(){
+        return super.toString() + "Tipo de arquivo: " + TipoArquivo;
+    }
 }

@@ -4,18 +4,23 @@ package pacoteUsuario;
 public class Usuario {
     protected static int GERADOR_ID = 1;
     
-    protected String nome, senha, tipo_acesso;
+    protected String nome, senha;
     protected int id;
     
-    public Usuario(String tipo_acesso){
+    public Usuario(){
         this.id = GERADOR_ID;
         this.nome = null;
         this.senha = null;
-        this.tipo_acesso = tipo_acesso;
         
         GERADOR_ID++;
                 
     }
+    
+    @Override
+    public String toString(){
+        return "ID: "+ this.id + "\nNOME: " + this.nome + "\nSenha: " + this.senha + "\n";
+    }
+    
     
     public String getNome() {
         return nome;
@@ -48,11 +53,4 @@ public class Usuario {
         return id;
     }
 
-    public String getTipo_acesso() {
-        return tipo_acesso;
-    }
-
-    public void setTipo_acesso(String tipo_acesso) throws IllegalArgumentException{
-        this.tipo_acesso = tipo_acesso;
-    }
 }  

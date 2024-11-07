@@ -19,6 +19,11 @@ public class Livro {
         this.ano = ano; 
         this.genero = genero;
     }
+    
+    @Override
+    public String toString(){
+        return "Título: " + titulo + "\nAutor: " + autor + "\nGênero: " + genero + "\nAno publicação: " + ano;
+    }
 
     // Métodos getters e setters para acessar e modificar os atributos privados
 
@@ -54,11 +59,18 @@ public class Livro {
         this.genero = genero; // Define um novo valor para o gênero
     }
     
-    public void exibirInfo(){
-        System.out.println("Titulo: "+titulo);
-            System.out.println("Autor: "+autor);
-            System.out.println("Genero: "+genero);
-            System.out.println("Ano de publicação: : "+ano);
+    public static String exibirInfo(String titulo_procurado){
+        if(Listalivro.isEmpty()){
+            return "Não há livros cadastrados...";
+        }
+        
+        for(Livro l:Listalivro){
+            if(l.titulo.equalsIgnoreCase(titulo_procurado)){
+                return l.toString();
+            }
+        }
+        
+        return "Livro não encontrado...";
     }
 }
     
