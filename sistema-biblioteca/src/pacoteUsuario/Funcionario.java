@@ -1,8 +1,8 @@
 
 package pacoteUsuario;
 
-public class Professor extends Usuario{
-    public Professor(){
+public class Funcionario extends Usuario{
+    public Funcionario(){
         super("professor");
     }
     

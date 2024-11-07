@@ -3,8 +3,8 @@ package pacoteUsuario;
 public class Teste {
     public static void main(String[] args) {
         Administrador adm = new Administrador();
-        Estudante estudante = new Estudante();
-        Professor professor = new Professor();
+        Cliente estudante = new Cliente();
+        Funcionario professor = new Funcionario();
         
         adm.setNome("Adm1");
         adm.setSenha("12234");

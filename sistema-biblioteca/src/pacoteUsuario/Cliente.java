@@ -8,8 +8,8 @@ package pacoteUsuario;
  *
  * @author Tauã- one nation
  */
-public class Estudante extends Usuario{
-    public Estudante(){
+public class Cliente extends Usuario{
+    public Cliente(){
         super("estudante");
     }
     
