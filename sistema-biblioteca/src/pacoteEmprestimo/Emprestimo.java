@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import pacoteLivro.Livro;
 import pacoteUsuario.Usuario;
 import java.time.LocalDate;
-import pacoteUsuario.Funcionario;
 
 public class Emprestimo {
     private int GERADOR_ID = 1;
@@ -47,16 +46,9 @@ public class Emprestimo {
     }
     
     
-    public static String realizarEmprestimo(Emprestimo e, Funcionario adm){
-        for(Usuario u: Funcionario.getLista_usuarios()){
-            if(adm == u){
-                lista_emprestimos.add(e);
-                
-                return "Emprestimo realizado com sucesso!!";
-            }
-        }
-        
-        return "Não foi possível realizar o empréstimo. Administrador não encontrado...";
+    public static String realizarEmprestimo(Emprestimo e){
+        lista_emprestimos.add(e);
+        return "Emprestimo realizado com sucesso!!";
     }
     
     public static String mostrarEmprestimos(){
