@@ -2,6 +2,7 @@ package main;
 
 
 import java.awt.Color;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /*
@@ -42,9 +43,6 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
         letr_busc_nome1 = new javax.swing.JLabel();
         btn_pagina_inicial = new javax.swing.JButton();
         Bt_sair_2 = new javax.swing.JButton();
-        nome_livro_cad_field = new javax.swing.JTextField();
-        gen_livro_cad_field = new javax.swing.JTextField();
-        qtd_livro_cad_field = new javax.swing.JTextField();
 
         Bt_sair_1.setBackground(new java.awt.Color(51, 51, 51));
         Bt_sair_1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -64,6 +62,7 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(500, 450));
 
         jPanel1.setBackground(new java.awt.Color(60, 62, 65));
 
@@ -141,57 +140,6 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
             }
         });
 
-        nome_livro_cad_field.setBackground(new java.awt.Color(102, 102, 102));
-        nome_livro_cad_field.setForeground(new java.awt.Color(153, 153, 153));
-        nome_livro_cad_field.setText("Escreva o nome do livro aqui");
-        nome_livro_cad_field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                nome_livro_cad_fieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                nome_livro_cad_fieldFocusLost(evt);
-            }
-        });
-        nome_livro_cad_field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nome_livro_cad_fieldActionPerformed(evt);
-            }
-        });
-
-        gen_livro_cad_field.setBackground(new java.awt.Color(102, 102, 102));
-        gen_livro_cad_field.setForeground(new java.awt.Color(153, 153, 153));
-        gen_livro_cad_field.setText("Gênero do livro");
-        gen_livro_cad_field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                gen_livro_cad_fieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                gen_livro_cad_fieldFocusLost(evt);
-            }
-        });
-        gen_livro_cad_field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gen_livro_cad_fieldActionPerformed(evt);
-            }
-        });
-
-        qtd_livro_cad_field.setBackground(new java.awt.Color(102, 102, 102));
-        qtd_livro_cad_field.setForeground(new java.awt.Color(153, 153, 153));
-        qtd_livro_cad_field.setText("Quantidade de livros");
-        qtd_livro_cad_field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                qtd_livro_cad_fieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                qtd_livro_cad_fieldFocusLost(evt);
-            }
-        });
-        qtd_livro_cad_field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                qtd_livro_cad_fieldActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -206,33 +154,28 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(lista_livros_cadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(letr_busc_nome)
-                        .addContainerGap(12, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(field_get_nome_livro, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(btn_consulta_livro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(49, 49, 49))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(letr_busc_nome1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(49, 49, 49))))
-                                    .addComponent(nome_livro_cad_field, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(gen_livro_cad_field, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(qtd_livro_cad_field, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_cadastrar_novo_livro, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60))))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(field_get_nome_livro, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addComponent(btn_consulta_livro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(69, 69, 69)
+                                .addComponent(letr_busc_nome1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(letr_busc_nome))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(btn_cadastrar_novo_livro, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(10, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,30 +190,24 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lista_livros_cadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
+                        .addGap(71, 71, 71)
                         .addComponent(letr_busc_nome1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(field_get_nome_livro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(btn_consulta_livro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(nome_livro_cad_field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(gen_livro_cad_field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(qtd_livro_cad_field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
+                        .addComponent(field_get_nome_livro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_consulta_livro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(letr_busc_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_cadastrar_novo_livro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                        .addGap(76, 76, 76))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,7 +223,21 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
     }//GEN-LAST:event_Bt_sair_1ActionPerformed
 
     private void btn_cadastrar_novo_livroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrar_novo_livroActionPerformed
-        
+            String nome_livro = JOptionPane.showInputDialog(this, "Qual o nome do livro?");
+            int conf_jcb;
+            
+                String qtd_autores[] = {"1","2","3","4","5","6","7","8","9","10"};
+                JComboBox qtd_autores_cat = new JComboBox(qtd_autores);
+                conf_jcb = JOptionPane.showConfirmDialog(this,qtd_autores_cat,"Quantidade de autores",JOptionPane.DEFAULT_OPTION);
+
+                    String qtd_livros = JOptionPane.showInputDialog(this, "Quantos livros serão adicionados");
+                    
+                        String genero[] = {"Terror","Romance","Mistério","Guerra","Ficção cientifica","Fantasia","Cowboys","Época","Medieval","Grécia antiga"};
+                        JComboBox gereno_cat = new JComboBox(genero);
+                        conf_jcb = JOptionPane.showConfirmDialog(this,gereno_cat,"Gênero do livro",JOptionPane.DEFAULT_OPTION);
+                    
+                        
+                    
     }//GEN-LAST:event_btn_cadastrar_novo_livroActionPerformed
 
     private void field_get_nome_livroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_get_nome_livroActionPerformed
@@ -318,60 +269,6 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
                 System.exit(0);
             }
     }//GEN-LAST:event_Bt_sair_2ActionPerformed
-
-    private void nome_livro_cad_fieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nome_livro_cad_fieldFocusGained
-        if(nome_livro_cad_field.getText().equals("Escreva o nome do livro aqui")){
-                nome_livro_cad_field.setText("");
-                nome_livro_cad_field.setForeground(Color.black);
-            }
-    }//GEN-LAST:event_nome_livro_cad_fieldFocusGained
-
-    private void nome_livro_cad_fieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nome_livro_cad_fieldFocusLost
-        if(nome_livro_cad_field.getText().equals("")){
-                nome_livro_cad_field.setText("Escreva o nome do livro aqui");
-                nome_livro_cad_field.setForeground(Color.gray);
-            }
-    }//GEN-LAST:event_nome_livro_cad_fieldFocusLost
-
-    private void nome_livro_cad_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome_livro_cad_fieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nome_livro_cad_fieldActionPerformed
-
-    private void gen_livro_cad_fieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_gen_livro_cad_fieldFocusGained
-        if(gen_livro_cad_field.getText().equals("Gênero do livro")){
-                gen_livro_cad_field.setText("");
-                gen_livro_cad_field.setForeground(Color.black);
-            }
-    }//GEN-LAST:event_gen_livro_cad_fieldFocusGained
-
-    private void gen_livro_cad_fieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_gen_livro_cad_fieldFocusLost
-        if(gen_livro_cad_field.getText().equals("")){
-                gen_livro_cad_field.setText("Gênero do livro");
-                gen_livro_cad_field.setForeground(Color.gray);
-            }
-    }//GEN-LAST:event_gen_livro_cad_fieldFocusLost
-
-    private void gen_livro_cad_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gen_livro_cad_fieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_gen_livro_cad_fieldActionPerformed
-
-    private void qtd_livro_cad_fieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_qtd_livro_cad_fieldFocusGained
-        if(qtd_livro_cad_field.getText().equals("Quantidade de livros")){
-                qtd_livro_cad_field.setText("");
-                qtd_livro_cad_field.setForeground(Color.black);
-            }
-    }//GEN-LAST:event_qtd_livro_cad_fieldFocusGained
-
-    private void qtd_livro_cad_fieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_qtd_livro_cad_fieldFocusLost
-        if(qtd_livro_cad_field.getText().equals("")){
-                qtd_livro_cad_field.setText("Quantidade de livros");
-                qtd_livro_cad_field.setForeground(Color.gray);
-            }
-    }//GEN-LAST:event_qtd_livro_cad_fieldFocusLost
-
-    private void qtd_livro_cad_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtd_livro_cad_fieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qtd_livro_cad_fieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -418,13 +315,10 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
     private javax.swing.JButton btn_consulta_livro;
     private javax.swing.JButton btn_pagina_inicial;
     private javax.swing.JTextField field_get_nome_livro;
-    private javax.swing.JTextField gen_livro_cad_field;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel letr_busc_nome;
     private javax.swing.JLabel letr_busc_nome1;
     private javax.swing.JScrollPane lista_livros_cadastrados;
-    private javax.swing.JTextField nome_livro_cad_field;
-    private javax.swing.JTextField qtd_livro_cad_field;
     // End of variables declaration//GEN-END:variables
 }
