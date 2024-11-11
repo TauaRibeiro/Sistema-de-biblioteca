@@ -2,6 +2,7 @@ package main;
 
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -66,7 +67,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         login_field.setBackground(new java.awt.Color(102, 102, 102));
-        login_field.setForeground(new java.awt.Color(0, 0, 0));
+        login_field.setForeground(new java.awt.Color(153, 153, 153));
         login_field.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         login_field.setText("Login");
         login_field.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -115,7 +116,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         pass_field.setBackground(new java.awt.Color(102, 102, 102));
-        pass_field.setForeground(new java.awt.Color(0, 0, 0));
+        pass_field.setForeground(new java.awt.Color(153, 153, 153));
         pass_field.setText("Enter password");
         pass_field.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -199,11 +200,15 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Bt_sair_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_sair_1ActionPerformed
-        System.exit(0);
+        int response = JOptionPane.showConfirmDialog(this,"Tem certeza que quer sair?", "Confirmar", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION){
+                System.exit(0);
+            }
     }//GEN-LAST:event_Bt_sair_1ActionPerformed
 
     private void btn_jframe_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jframe_cadastrarActionPerformed
         new Cadastro_funcionarios().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_jframe_cadastrarActionPerformed
 
     private void login_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_fieldActionPerformed
@@ -213,7 +218,7 @@ public class Login extends javax.swing.JFrame {
     private void login_fieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_login_fieldFocusLost
         if(login_field.getText().equals("")){
             login_field.setText("Login");
-            login_field.setForeground(Color.black);
+            login_field.setForeground(Color.gray);
         };
     }//GEN-LAST:event_login_fieldFocusLost
 
