@@ -93,7 +93,7 @@ public class Livro {
             this.quantidade_livros = quantidade_livros;
         }
     }
- 
+    //Exibe info de um livro específico 
     public static String exibirInfo(String procura){
         if(Listalivro.isEmpty()){
             return "Não há livros cadastrados...";
@@ -113,7 +113,20 @@ public class Livro {
         
         return "Livro não encontrado...";
     }
-    
+    //Exibe info de todos os livros
+    public static String exibirInfo(){
+        if(Listalivro.isEmpty()){
+            return "Não há livros cadastrados...";
+        }
+        
+        StringBuilder resultado = new StringBuilder();
+        
+        for(Livro l:Listalivro){
+            resultado.append(l.toString()).append('\n');
+        }
+        
+        return resultado.toString();
+    }
 }
     
 

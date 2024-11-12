@@ -53,7 +53,6 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
         Bt_sair_1.setBorderPainted(false);
         Bt_sair_1.setFocusPainted(false);
         Bt_sair_1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Bt_sair_1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Bt_sair_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bt_sair_1ActionPerformed(evt);
@@ -133,7 +132,6 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
         Bt_sair_2.setBorderPainted(false);
         Bt_sair_2.setFocusPainted(false);
         Bt_sair_2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Bt_sair_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Bt_sair_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bt_sair_2ActionPerformed(evt);
