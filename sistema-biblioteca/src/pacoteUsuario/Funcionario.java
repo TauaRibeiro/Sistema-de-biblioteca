@@ -3,8 +3,8 @@ package pacoteUsuario;
 
 import java.util.ArrayList;
 
-public class Funcionario extends Usuario{
-    private static ArrayList<Usuario> lista_usuarios = new ArrayList();
+public final class Funcionario extends Usuario{
+    private final static ArrayList<Usuario> lista_usuarios = new ArrayList();
     
     public Funcionario(){}
   

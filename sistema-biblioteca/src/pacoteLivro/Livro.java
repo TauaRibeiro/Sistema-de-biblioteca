@@ -3,13 +3,13 @@ package pacoteLivro;
 
 import java.util.ArrayList;
 
-public class Livro {
+public final class Livro {
     // Declaração de variáveis de instância privadas
     private String titulo;
     private ArrayList <String> lista_autores;
     private int ano, quantidade_livros;
     private String genero;
-    private static ArrayList<Livro> Listalivro = new ArrayList();
+    private final static ArrayList<Livro> Listalivro = new ArrayList();
 
 
     // Construtor da classe que inicializa as variáveis de instância

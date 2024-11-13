@@ -7,12 +7,12 @@ import java.time.LocalDate;
 
 public class Emprestimo {
     private int GERADOR_ID = 1;
-    private static ArrayList <Emprestimo> lista_emprestimos = new ArrayList();
+    private final static ArrayList <Emprestimo> lista_emprestimos = new ArrayList();
     
     private Livro livro_emprestado;
     private Usuario usuario_emprestimo;
-    private LocalDate data_emprestimo;
-    private int id;
+    private final LocalDate data_emprestimo;
+    private final int id;
     
     public Emprestimo(){
         this.usuario_emprestimo = null;

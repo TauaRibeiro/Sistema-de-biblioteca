@@ -8,7 +8,7 @@ package pacoteUsuario;
  *
  * @author Tauã- one nation
  */
-public class Cliente extends Usuario{
+public final class Cliente extends Usuario{
     private String cpf, endereco;
     
     public Cliente(){

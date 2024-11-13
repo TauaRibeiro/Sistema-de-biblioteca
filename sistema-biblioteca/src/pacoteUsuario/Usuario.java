@@ -5,7 +5,7 @@ public class Usuario {
     protected static int GERADOR_ID = 1;
     
     protected String nome, senha;
-    protected int id;
+    protected final int id;
     
     public Usuario(){
         this.id = GERADOR_ID;
