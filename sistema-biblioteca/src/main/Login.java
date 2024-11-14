@@ -3,6 +3,7 @@ package main;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import pacoteUsuario.Funcionario;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -209,6 +210,7 @@ public class Login extends javax.swing.JFrame {
     private void btn_jframe_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jframe_cadastrarActionPerformed
         new Cadastro_funcionarios().setVisible(true);
         this.dispose();
+            
     }//GEN-LAST:event_btn_jframe_cadastrarActionPerformed
 
     private void login_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_fieldActionPerformed
@@ -226,7 +228,7 @@ public class Login extends javax.swing.JFrame {
         if(login_field.getText().equals("Login")){
                 login_field.setText("");
                 login_field.setForeground(Color.black);
-            }
+        }
     }//GEN-LAST:event_login_fieldFocusGained
 
     private void pass_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass_fieldActionPerformed

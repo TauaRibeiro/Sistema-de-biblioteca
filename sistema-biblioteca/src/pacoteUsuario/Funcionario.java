@@ -4,17 +4,18 @@ package pacoteUsuario;
 import java.util.ArrayList;
 
 public final class Funcionario extends Usuario{
-    private final static ArrayList<Usuario> lista_usuarios = new ArrayList();
+    private static ArrayList<Usuario> lista_funcionarios = new ArrayList();
     
     public Funcionario(){}
   
     
-    public static ArrayList<Usuario> getLista_usuarios() {
-        return lista_usuarios;
+    public static ArrayList<Usuario> getLista_funcionarios() {
+        return lista_funcionarios;
     }
     
     
-    public void cadastrarUsuario(Usuario u){
+    public void cadastrarFuncionario(Usuario u){
+        lista_funcionarios.add(u);
         lista_usuarios.add(u);
     }
     

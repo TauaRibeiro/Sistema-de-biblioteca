@@ -3,6 +3,7 @@ package main;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import pacoteUsuario.Funcionario;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -273,6 +274,22 @@ public class Cadastro_funcionarios extends javax.swing.JFrame {
 
     private void btn_cadastrar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrar_clienteActionPerformed
         new Cadastro_funcionarios().setVisible(true);
+        
+        Funcionario novo_funcionario = new Funcionario();
+        
+        try{
+            novo_funcionario.setNome(nome_func_field.getText());
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
+        try{
+            novo_funcionario.setSenha(senha_func_field.getText());
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+        
+            
     }//GEN-LAST:event_btn_cadastrar_clienteActionPerformed
 
     private void btn_pagina_inicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagina_inicialActionPerformed

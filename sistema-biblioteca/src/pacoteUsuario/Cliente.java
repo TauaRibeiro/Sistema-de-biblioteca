@@ -4,11 +4,14 @@
  */
 package pacoteUsuario;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Tauã- one nation
  */
 public final class Cliente extends Usuario{
+    private static ArrayList<Usuario> lista_cliente = new ArrayList();
     private String cpf, endereco;
     
     public Cliente(){
@@ -40,7 +43,10 @@ public final class Cliente extends Usuario{
         this.endereco = endereco;
     }
     
-    
+    public static void cadastrarCliente(Cliente c){
+        lista_usuarios.add(c);
+        lista_cliente.add(c);
+    }
     
     
 }
