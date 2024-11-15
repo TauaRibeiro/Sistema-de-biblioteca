@@ -7,8 +7,9 @@ public final class Livro {
     // Declaração de variáveis de instância privadas
     private String titulo;
     private ArrayList <String> lista_autores;
-    private int ano, quantidade_livros;
+    private int quantidade_livros;
     private String genero;
+    private String status;
     private final static ArrayList<Livro> Listalivro = new ArrayList();
 
 
@@ -16,18 +17,26 @@ public final class Livro {
     public Livro() {
         this.titulo = null;
         this.lista_autores = null;  
-        this.ano = 0; 
         this.genero = null;
         this.quantidade_livros = 0;
+        this.status = null;
     }
     
     @Override
     public String toString(){
-        return "Título: " + titulo + "\nAutores: " + lista_autores + "\nGênero: " + genero + "\nAno publicação: " + ano + "\nQuantidade de unidades: " + quantidade_livros;
+        return "Título: " + titulo + "\nAutores: " + lista_autores + "\nGênero: " + genero + "\nQuantidade de unidades: " + quantidade_livros;
     }
 
     // Métodos getters e setters para acessar e modificar os atributos privados
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
     public String getTitulo() {
         return titulo; // Retorna o título do cadastro
     }
@@ -40,34 +49,8 @@ public final class Livro {
         }
     }
 
-    public ArrayList<String> getLista_autores() {
-        return lista_autores; // Retorna o autor do cadastro
-    }
-
-    public void setLista_autores(ArrayList <String> autor) throws IllegalArgumentException{
-        if(autor.isEmpty()){
-            throw new IllegalArgumentException("Lista de autores inválidos!! Deve ter no mínimo um autor");
-        }
-        
-        for(String a:autor){    
-            if(a.length() < 3){
-                throw new IllegalArgumentException("Nome inválido ( " + a + " )! O nome do autor deve ter no mínimo 3 caracteres");
-            }
-        }
-        
-        this.lista_autores = autor;
-    }
-
-    public int getAno() {
-        return ano; // Retorna o ano do cadastro
-    }
-
-    public void setAno(int ano) throws IllegalArgumentException{
-        if(ano < 0){
-            throw new IllegalArgumentException("Ano inválido! Deve ser um número positivo.");
-        }else{
-            this.ano = ano; // Define um novo valor para o ano
-        }
+    public static ArrayList<Livro> getListaLivro() {
+        return Listalivro; // Retorna o autor do cadastro
     }
 
     public String getGenero() {
@@ -93,7 +76,19 @@ public final class Livro {
             this.quantidade_livros = quantidade_livros;
         }
     }
-    //Exibe info de um livro específico 
+    
+    public void adicionarAutor(String autor) throws IllegalArgumentException{
+        if(autor.length() < 3){
+            throw new IllegalArgumentException();
+        }else{
+            this.lista_autores.add(autor);
+        }
+    }
+    
+    public static void cadastrarLivro(Livro l){
+        Listalivro.add(l);
+    }
+    
     public static String exibirInfo(String procura){
         if(Listalivro.isEmpty()){
             return "Não há livros cadastrados...";

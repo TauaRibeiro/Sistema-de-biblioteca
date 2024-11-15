@@ -14,12 +14,12 @@ public final class Funcionario extends Usuario{
     }
     
     
-    public void cadastrarFuncionario(Usuario u){
+    public static void cadastrarFuncionario(Usuario u){
         lista_funcionarios.add(u);
         lista_usuarios.add(u);
     }
     
-    public String mostrarUsuarios(){
+    public static String mostrarUsuarios(){
         if(lista_usuarios.isEmpty()){
             return "Não usuários cadastrados...";
         }
@@ -33,7 +33,7 @@ public final class Funcionario extends Usuario{
         return resultado.toString();
     }
     
-    public String excluirUsuario(int id_usuario){
+    public static String excluirUsuario(int id_usuario){
         if(lista_usuarios.isEmpty()){
             return "Não há usuário cadastrados...";
         }

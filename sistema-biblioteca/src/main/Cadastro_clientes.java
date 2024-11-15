@@ -3,6 +3,7 @@ package main;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import pacoteUsuario.Cliente;
 
 public class Cadastro_clientes extends javax.swing.JFrame {
 
@@ -226,7 +227,26 @@ public class Cadastro_clientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_cadastrar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrar_clienteActionPerformed
-        new Cadastro_funcionarios().setVisible(true);
+
+        Cliente novo_cliente = new Cliente();
+        
+        try{
+            novo_cliente.setNome(nome_cliente_field.getText());
+        }catch(IllegalArgumentException e){
+        
+        }
+        
+        try{
+            novo_cliente.setSenha(senha_cliente_field.getText());
+        }catch(IllegalArgumentException e){
+        
+        }
+        
+        Cliente.cadastrarCliente(novo_cliente);
+        
+        nome_cliente_field.setText("");
+        senha_cliente_field.setText("");
+        
     }//GEN-LAST:event_btn_cadastrar_clienteActionPerformed
 
     private void btn_pagina_inicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagina_inicialActionPerformed

@@ -1,7 +1,10 @@
 package pacoteUsuario;
 
+import java.util.ArrayList;
+
 
 public class Usuario {
+    protected static ArrayList<Usuario> lista_usuarios = new ArrayList();
     protected static int GERADOR_ID = 1;
     
     protected String nome, senha;
@@ -20,7 +23,10 @@ public class Usuario {
     public String toString(){
         return "ID: "+ this.id + "\nNOME: " + this.nome + "\nSenha: " + this.senha + "\n";
     }
-    
+
+    public static ArrayList<Usuario> getLista_usuarios() {
+        return lista_usuarios;
+    }
     
     public String getNome() {
         return nome;

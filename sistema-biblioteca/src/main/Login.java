@@ -4,6 +4,7 @@ package main;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import pacoteUsuario.Funcionario;
+import pacoteUsuario.Usuario;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -250,7 +251,15 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_pass_fieldFocusLost
 
     private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
-
+        for(Usuario u:Usuario.getLista_usuarios()){
+            if(u.getNome().equals(login_field.getText()) && u.getSenha().equals(pass_field.getText())){
+                new Tela_principal().setVisible(true);
+                this.dispose();
+            }
+            else{
+                JOptionPane.showConfirmDialog(this, "Nome de usuário ou senha incorretos","Erro",JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btn_entrarActionPerformed
 
     /**

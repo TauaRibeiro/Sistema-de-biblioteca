@@ -3,6 +3,7 @@ package main;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import pacoteLivro.Livro;
 import pacoteUsuario.Funcionario;
 
 /*
@@ -15,7 +16,8 @@ import pacoteUsuario.Funcionario;
  * @author Ezequiel
  */
 public class Cadastro_funcionarios extends javax.swing.JFrame {
-
+    
+    Livro 
     /**
      * Creates new form Cadastro_funcionarios
      */
@@ -38,7 +40,7 @@ public class Cadastro_funcionarios extends javax.swing.JFrame {
         rpt_senha_func_field = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btn_cadastrar_cliente = new javax.swing.JButton();
-        btn_pagina_inicial = new javax.swing.JButton();
+        btn_pagina_login = new javax.swing.JButton();
         Bt_sair_2 = new javax.swing.JButton();
         senha_adm = new javax.swing.JTextField();
 
@@ -118,12 +120,12 @@ public class Cadastro_funcionarios extends javax.swing.JFrame {
             }
         });
 
-        btn_pagina_inicial.setBackground(new java.awt.Color(51, 51, 51));
-        btn_pagina_inicial.setForeground(new java.awt.Color(255, 255, 255));
-        btn_pagina_inicial.setText("Pagina inicial");
-        btn_pagina_inicial.addActionListener(new java.awt.event.ActionListener() {
+        btn_pagina_login.setBackground(new java.awt.Color(51, 51, 51));
+        btn_pagina_login.setForeground(new java.awt.Color(255, 255, 255));
+        btn_pagina_login.setText("Login");
+        btn_pagina_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_pagina_inicialActionPerformed(evt);
+                btn_pagina_loginActionPerformed(evt);
             }
         });
 
@@ -136,7 +138,6 @@ public class Cadastro_funcionarios extends javax.swing.JFrame {
         Bt_sair_2.setBorderPainted(false);
         Bt_sair_2.setFocusPainted(false);
         Bt_sair_2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Bt_sair_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Bt_sair_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bt_sair_2ActionPerformed(evt);
@@ -182,7 +183,7 @@ public class Cadastro_funcionarios extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btn_pagina_inicial)
+                        .addComponent(btn_pagina_login)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Bt_sair_2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -192,7 +193,7 @@ public class Cadastro_funcionarios extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_pagina_inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_pagina_login, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bt_sair_2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
@@ -289,13 +290,14 @@ public class Cadastro_funcionarios extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
         
+        Funcionario.cadastrarFuncionario(novo_funcionario);
             
     }//GEN-LAST:event_btn_cadastrar_clienteActionPerformed
 
-    private void btn_pagina_inicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagina_inicialActionPerformed
-        new Tela_principal().setVisible(true);
+    private void btn_pagina_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagina_loginActionPerformed
+        new Login().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btn_pagina_inicialActionPerformed
+    }//GEN-LAST:event_btn_pagina_loginActionPerformed
 
     private void Bt_sair_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_sair_2ActionPerformed
         int response = JOptionPane.showConfirmDialog(this,"Tem certeza que quer sair?", "Confirmar", JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -356,7 +358,7 @@ public class Cadastro_funcionarios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bt_sair_2;
     private javax.swing.JButton btn_cadastrar_cliente;
-    private javax.swing.JButton btn_pagina_inicial;
+    private javax.swing.JButton btn_pagina_login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nome_func_field;

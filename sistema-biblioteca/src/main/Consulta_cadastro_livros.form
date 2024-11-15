@@ -171,6 +171,9 @@
               <Dimension value="[100, 30]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consulta_livroActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="field_get_nome_livro">
           <Properties>

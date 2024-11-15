@@ -2,15 +2,20 @@ package main;
 
 
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showInputDialog;
 import javax.swing.table.DefaultTableModel;
+import pacoteLivro.Livro;
 
 public class Consulta_cadastro_livros extends javax.swing.JFrame {
+    
+    Livro novo_livro;
 
-    public Consulta_cadastro_livros() {
+    public Consulta_cadastro_livros(Livro novo_livro) {
         initComponents();
+        this.novo_livro = novo_livro;
     }
 
     @SuppressWarnings("unchecked")
@@ -56,6 +61,11 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
         btn_consulta_livro.setBackground(new java.awt.Color(51, 51, 51));
         btn_consulta_livro.setText("consultar");
         btn_consulta_livro.setPreferredSize(new java.awt.Dimension(100, 30));
+        btn_consulta_livro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consulta_livroActionPerformed(evt);
+            }
+        });
 
         field_get_nome_livro.setBackground(new java.awt.Color(102, 102, 102));
         field_get_nome_livro.setForeground(new java.awt.Color(153, 153, 153));
@@ -262,45 +272,60 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
             int conf_jcb;
             boolean ct_status_livro = true;
             String status_livro;
+            String autor;
             
-            if (ct_status_livro = true){
-                status_livro = "Disponível";
-            }
-            else{
-                status_livro = "Indisponível";
-            }
+            Livro novo_livro = new Livro();
             
+            novo_livro.setStatus("Disponível");
+            
+            try{
+                novo_livro.setTitulo(nome_livro);
+            }catch(IllegalArgumentException e){
                 if(nome_livro.trim().isEmpty()){
-                    JOptionPane.showConfirmDialog(this, "O campo nome do livro não pode ser vazio","Erro",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showConfirmDialog(this, "O campo nome do livro não pode ser vazio","Erro",JOptionPane.ERROR_MESSAGE);
                 }
-                else{
-                       
-                            String qtd_autores[] = {"1","2","3","4","5","6","7","8","9","10"};
-                                JComboBox qtd_autores_cat = new JComboBox(qtd_autores);
-                                    conf_jcb = JOptionPane.showConfirmDialog(this,qtd_autores_cat,"Quantidade de autores",JOptionPane.DEFAULT_OPTION);
+            }
+            
+            String qtd_autores[] = {"1","2","3","4","5","6","7","8","9","10"};
+            JComboBox qtd_autores_cat = new JComboBox(qtd_autores);
+            conf_jcb = JOptionPane.showConfirmDialog(this,qtd_autores_cat,"Quantidade de autores",JOptionPane.DEFAULT_OPTION);
 
-                                String ct_autores = (String) qtd_autores_cat.getSelectedItem();
-                                   int cat_autores_qtd = Integer.parseInt(ct_autores);
-                                        for(int ct_a = 1; ct_a <= cat_autores_qtd; ct_a++){
-                                            if(ct_a == 1)
-                                            {
-                                                JOptionPane.showInputDialog(this, "Qual o nome autor principal ?");
-
-                                            } else {
-                                                JOptionPane.showInputDialog(this, "Qual o nome autor "+ct_a+"?");
-                                            }
-                                        }
-
-                                String qtd_livros = JOptionPane.showInputDialog(this, "Quantos livros serão adicionados");
-
-                                    String genero[] = {"Terror","Romance","Mistério","Guerra","Ficção cientifica","Fantasia","Cowboys","Época","Medieval","Grécia antiga"};
-                                        JComboBox gereno_cat = new JComboBox(genero);
-                                            String genero_livro = (String) gereno_cat.getSelectedItem();
-                                            conf_jcb = JOptionPane.showConfirmDialog(this,gereno_cat,"Gênero do livro",JOptionPane.DEFAULT_OPTION); 
-                                            
-                        }
+            String ct_autores = (String) qtd_autores_cat.getSelectedItem();
+            int cat_autores_qtd = Integer.parseInt(ct_autores);
+            for(int ct_a = 1; ct_a <= cat_autores_qtd; ct_a++){
                 
+                if(ct_a == 1){
+                    autor = JOptionPane.showInputDialog(this, "Qual o nome autor principal ?");
+                } else {
+                    autor = JOptionPane.showInputDialog(this, "Qual o nome autor "+ct_a+"?");
+                }
                 
+                try{
+                    novo_livro.adicionarAutor(autor);
+                }catch(IllegalArgumentException e){
+                
+                }
+            }
+
+            int qtd_livros = Integer.parseInt(JOptionPane.showInputDialog(this, "Quantos livros serão adicionados"));
+            
+            try{
+                novo_livro.setQuantidade_livros(qtd_livros);
+            }catch(IllegalArgumentException e){
+                
+            }
+            String genero[] = {"Terror","Romance","Mistério","Guerra","Ficção cientifica","Fantasia","Cowboys","Época","Medieval","Grécia antiga"};
+            JComboBox gereno_cat = new JComboBox(genero);
+            String genero_livro = (String) gereno_cat.getSelectedItem();
+            conf_jcb = JOptionPane.showConfirmDialog(this,gereno_cat,"Gênero do livro",JOptionPane.DEFAULT_OPTION);
+            
+            try{
+                novo_livro.setGenero(genero_livro);
+            }catch(IllegalArgumentException e){
+            
+            }
+            
+            Livro.cadastrarLivro(novo_livro);
     }//GEN-LAST:event_btn_cadastrar_novo_livroActionPerformed
 
     private void field_get_nome_livroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_get_nome_livroActionPerformed
@@ -350,10 +375,14 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
                                 else{
                                     //Fazer a coleta final de dados
                                 }
-                            }
+                            }}
             
     }//GEN-LAST:event_btn_emprestar_livroActionPerformed
-    }
+
+    private void btn_consulta_livroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consulta_livroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_consulta_livroActionPerformed
+    
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
