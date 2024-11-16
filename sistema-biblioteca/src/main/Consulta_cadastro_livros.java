@@ -387,7 +387,8 @@ public class Consulta_cadastro_livros extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Consulta_cadastro_livros().setVisible(true);
+                // Esse recho deu erro, não apaguei poís nao sei se precisa desse trecho
+                //new Consulta_cadastro_livros().setVisible(true);
             }
         });
     }

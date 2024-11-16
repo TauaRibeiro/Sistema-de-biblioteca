@@ -3,7 +3,6 @@ package main;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
-import pacoteLivro.Livro;
 import pacoteUsuario.Funcionario;
 
 /*
@@ -17,7 +16,7 @@ import pacoteUsuario.Funcionario;
  */
 public class Cadastro_funcionarios extends javax.swing.JFrame {
     
-    Livro 
+
     /**
      * Creates new form Cadastro_funcionarios
      */

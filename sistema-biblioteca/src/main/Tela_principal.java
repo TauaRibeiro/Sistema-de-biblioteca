@@ -204,7 +204,8 @@ public class Tela_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_jframe_cadastrar_livroActionPerformed
 
     private void btn_jframe_consultar_livro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jframe_consultar_livro1ActionPerformed
-        new Consulta_cadastro_livros().setVisible(true);
+        //Essa parte deu erro, não apaguei porque não sei se precisa desse trecho
+        //new Consulta_cadastro_livros().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_jframe_consultar_livro1ActionPerformed
 
