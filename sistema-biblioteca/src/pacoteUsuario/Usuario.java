@@ -58,5 +58,15 @@ public class Usuario {
     public int getId() {
         return id;
     }
+    
+    public static Usuario procurarUsuario(String nome) throws IllegalArgumentException{
+        for(Usuario u: lista_usuarios){
+            if(u.getNome().equals(nome)){
+                return u;
+            }
+        }
+        
+        throw new IllegalArgumentException("Usuário não encontrado...");
+    }
 
 }  

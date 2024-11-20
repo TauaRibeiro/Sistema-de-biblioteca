@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public final class Livro {
     // Declaração de variáveis de instância privadas
     private String titulo;
-    private ArrayList <String> lista_autores;
+    private ArrayList <String> lista_autores = new ArrayList();
     private int quantidade_livros;
     private String genero;
     private String status;
@@ -15,8 +15,7 @@ public final class Livro {
 
     // Construtor da classe que inicializa as variáveis de instância
     public Livro() {
-        this.titulo = null;
-        this.lista_autores = null;  
+        this.titulo = null;  
         this.genero = null;
         this.quantidade_livros = 0;
         this.status = null;
@@ -24,7 +23,7 @@ public final class Livro {
     
     @Override
     public String toString(){
-        return "Título: " + titulo + "\nAutores: " + lista_autores + "\nGênero: " + genero + "\nQuantidade de unidades: " + quantidade_livros;
+        return "Título: " + titulo + "\nAutores: " + lista_autores + "\nGênero: " + genero + "\nQuantidade de unidades: " + quantidade_livros + '\n';
     }
 
     // Métodos getters e setters para acessar e modificar os atributos privados
@@ -70,7 +69,7 @@ public final class Livro {
     }
 
     public void setQuantidade_livros(int quantidade_livros) throws IllegalArgumentException{
-        if(quantidade_livros <= 0){
+        if(quantidade_livros < 0){
             throw new IllegalArgumentException("quantidade inválida!! Deve haver no mínimo uma unidade.");
         }else{
             this.quantidade_livros = quantidade_livros;
@@ -87,6 +86,16 @@ public final class Livro {
     
     public static void cadastrarLivro(Livro l){
         Listalivro.add(l);
+    }
+    
+    public static Livro procurarLivro(String titulo) throws IllegalArgumentException{
+        for(Livro l:Listalivro){
+            if(l.titulo.equalsIgnoreCase(titulo)){
+                return l;
+            }   
+        }
+        
+        throw new IllegalArgumentException("Título de um livro não existente...");
     }
     
     public static String exibirInfo(String procura){
